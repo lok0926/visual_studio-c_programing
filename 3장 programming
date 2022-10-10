@@ -1,0 +1,65 @@
+#include <stdio.h>  // 1번
+int main(void)
+{
+	double x;
+
+	printf("실수를 입력하시오: ");
+	scanf_s("%lf", &x);
+
+	printf("지수 형식으로는 %le", x);
+	return 0;
+}
+
+실수를 입력하시오: 1.234      // %lf
+지수 형식으로는 1.234000e+00  // %le
+
+#include <stdio.h>  // 2번
+int main(void)
+{
+	double x;
+
+	printf("지수형식으로 실수를 입력하시오: ");
+	scanf_s("%le", &x);
+
+	printf("소수점 표시 형식으로는 %lf", x);
+	return 0;
+}
+
+지수형식으로 실수를 입력하시오: 1.234e10
+소수점 표시 형식으로는 12340000000.000000
+
+int main(void)  // 3번
+{
+	double PI = 3.141592;
+	double radius, answer;
+
+	printf("반지름을 입력하시오: ");
+	scanf_s("%lf", &radius);
+
+	answer = 4.0 * PI * radius * radius;
+	printf("구의 표면적: %lf\n", answer);
+	
+	answer = 4.0/3.0 * PI * (radius * radius * radius);
+	printf("구의 부피: %lf", answer);
+
+	return 0;
+}
+반지름을 입력하시오: 60
+구의 표면적: 45238.924800
+구의 부피: 904778.496000
+
+int main(void)  // 4번
+{
+	double x, answer;
+
+	printf("x의 값을 입력하시오: ");
+	scanf_s("%lf", &x);
+
+	answer = 3 * x * x * x - 7 * x * x + 9;
+	printf("다항식의 값은 %lf", answer);
+
+	return 0;
+}
+x의 값을 입력하시오: 3.9
+다항식의 값은 80.487000
+

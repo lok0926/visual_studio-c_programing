@@ -1,0 +1,51 @@
+// 10월 12일 수업
+#include <stdio.h>
+int main(void)
+{
+	int i = 0;
+	while (i < 100)
+	{
+		printf("수업 시간에 떠들지 않겠습니다!!!!!!!!!!!!!!!!!!!!\n");
+		i++;
+	}
+
+// 펙토리얼
+	int n = 5;
+	int factorial = 1;
+	while (n >= 1)
+	{
+		factorial *= n;
+		n--;
+	}
+	printf("%d\n", factorial);
+  
+//종이접기로 에베레스트산 크기까지
+	double pheight = 0.001;
+	double everest = 8800.0;
+	int count = 0;
+
+	while (pheight < everest)
+	{
+		pheight *= 2.0;
+		count++;
+		printf("%lf\n", pheight);
+	}
+	printf("종이 접는 횟수 = %d\n", count);
+
+// 시계
+#include <windows.h>
+
+	int hour, min, sec;
+	hour = min = sec = 0;
+
+	while (1) {
+		system("cls");
+		printf("%02d:%02d:%02d", hour, min, sec);
+		sec++;
+		if (sec == 60){min++; sec = 0; }
+		if (min == 60){ hour++; min = 0; }
+		if (hour == 24) { hour = min = sec = 0; }
+		Sleep(1000);
+	}
+	return 0;
+}

@@ -78,3 +78,128 @@ int main(void)
 
 // 4번
 
+// 5번
+
+// 6번
+
+#include <stdio.h>
+
+int main(void)
+{
+	char a;
+	printf("신호등의 색깔 입력(R, G, Y): ");
+	a = getchar();
+
+	if (a == 'r'|| a == 'R')
+		printf("정지!");
+
+	else if (a == 'y' || a == 'Y')
+		printf("주의!");
+
+	else if (a == 'g' || a == 'G')
+		printf("진행!");
+	
+	return 0;
+} 
+
+신호등의 색깔 입력(R, G, Y): R
+정지!
+
+// 7번
+
+#include <stdio.h>
+
+int main(void)
+{
+	int a, b, c;
+	
+	printf("삼각형의 세변을 입력하시오: ");
+	scanf_s("%d %d %d", &a, &b, &c);
+
+	if (a == b && a == c)
+		printf("정삼각형");
+	else
+		printf("이등변 삼각형");
+
+	return 0;
+} 
+
+삼각형의 세변을 입력하시오: 30 40 40
+이등변 삼각형
+
+// 8번
+
+#include <stdio.h>
+int main(void)
+{
+int a;  // 입력받을 사용자의 과세 표준 금액
+int cnu = 0;  // 사용자의 소득세를 누적으로 더할 상수
+int b, c, d;
+
+printf("과세 표준을 입력하시오(만원): ");
+scanf_s("%d", &a);
+
+if (a < 1000)
+cnu = cnu +  a * 0.08;
+else if (a > 1000 && a < 4000)
+{
+cnu = 80;
+b = a - 1000;
+cnu = cnu + b * 0.17;
+}
+else if (a > 4000 && a < 8000)
+{
+cnu = 80 + 510;
+c = a - 4000;
+cnu = cnu +  c * (26 / 100);
+}
+else if (a > 8000)
+{
+cnu = 80 + 510 + 2080;
+d = a - 8000;
+cnu = cnu + d * (35 / 100);
+}
+
+printf("소득세는 %d만원입니다.", cnu);
+return 0;
+}
+
+과세 표준을 입력하시오(만원): 3500
+소득세는 505만원입니다.
+
+// 9번
+
+// 10번
+
+#include <stdio.h>
+int main(void)
+{
+	char a;
+	printf("학점을입력하시오: ");
+
+	a = getchar();
+
+	switch (a)
+	{
+	case 'A':
+		printf("아주잘했어요!");
+		break;
+	case 'B':
+		printf("좋습니다.");
+		break;
+	case 'C':
+		printf("만족스럽습니다.");
+		break;
+	case 'D':
+		printf("더노력해보세요.");
+		break;
+	case 'F':
+		printf("안타깝습니다.");
+		break;
+	}
+
+	return 0;
+}
+
+학점을입력하시오: A
+아주잘했어요!

@@ -1,0 +1,80 @@
+// 1번
+
+#include <stdio.h>
+
+int main(void)
+{
+	int a;
+
+	printf("정수를 입력하시오: ");
+	scanf_s("%d", &a);
+
+	if (a % 2 != 0)
+		printf("%d 은(는) 홀수 입니다.", a);
+
+	return 0;
+}
+
+정수를 입력하시오: 3
+3 은(는) 홀수 입니다.
+
+// 2번
+
+#include <stdio.h>
+
+int main(void)
+{
+	int a, b, sum, min, minus, max;
+
+	printf("정수를 입력하시오: ");
+	scanf_s("%d", &a);
+
+	printf("정수를 입력하시오: ");
+	scanf_s("%d", &b);
+
+	sum = a + b;
+	if (a > b) {
+		max = a;
+		min = b;
+	}
+	else if (b > a) {
+		max = b;
+		min = a;
+	}
+
+	minus = max - min;
+
+	printf("두수의 합은 %d입니다.\n", sum);
+	printf("두수의 차는 %d입니다.", minus);
+
+	return 0;
+}
+
+정수를 입력하시오: 30
+정수를 입력하시오: 50
+두수의 합은 80입니다.
+두수의 차는 20입니다.
+
+// 3번
+
+#include <stdio.h>
+
+int main(void)
+{
+	int a;
+	printf("요일을 0(일요일)에서 6까지의 정수로 입력하시오: ");
+	scanf_s("%d", &a);
+
+	if (a == 0 || a == 6)
+		printf("주말입니다.");
+	else
+		printf("주중입니다.");
+
+	return 0;
+}
+
+요일을 0(일요일)에서 6까지의 정수로 입력하시오: 0
+주말입니다.
+
+// 4번
+

@@ -1,0 +1,296 @@
+// 1번
+
+#include <stdio.h>
+int main(void)
+{
+	int n = 60;
+
+	while (n >= 0) {
+		printf("%d ", n);
+		n--;
+		if (n == -1)
+			printf("발사");
+	}
+	return 0;
+}
+
+60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 
+30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 발사
+
+// 2번
+
+#include <stdio.h>
+int main(void)
+{
+	int i;
+	
+	printf("몇 번이나 반복할까요?: ");
+	scanf_s("%d", &i);
+
+	while (i > 0) {
+		printf("안녕하세요?\n");
+		i--;
+	}
+
+	return 0;
+}
+
+몇 번이나 반복할까요?: 3
+안녕하세요?
+안녕하세요?
+안녕하세요?
+
+// 3번
+
+// 4번
+
+#include <stdio.h>
+int main(void)
+{
+	int i, a = 0;
+
+	while (1)
+	{
+		printf("정수를 입력하시오: ");
+		scanf_s("%d", &i);
+		a += i;
+
+		if (i == 0)
+			break;
+	}
+
+	printf("합계=%d", a);
+
+	return 0;
+}
+
+정수를 입력하시오: 10
+정수를 입력하시오: 20
+정수를 입력하시오: 30
+정수를 입력하시오: 0
+합계=60
+
+// 5번
+
+#include <stdio.h>
+int main(void)
+{
+	int x = 0;
+
+	while (x < 101)
+	{
+		x++;
+		if (x % 3 == 0 && x % 5 == 0)
+			printf("%d ", x);
+	}
+
+	return 0;
+}
+
+15 30 45 60 75 90
+
+// 6
+
+// 7번
+
+ #include <stdio.h>
+int main(void)
+{
+	int a, i, x, sum = 0;
+
+	printf("시작정수: ");
+	scanf_s("%d", &a);
+	printf("종료정수: ");
+	scanf_s("%d", &i);
+
+	for (x = a; x <= i; x ++)
+	{ 
+		sum += x;
+	}
+	printf("%d에서 %d까지의 합 = %d", a, i, sum);
+
+	return 0;
+}
+
+시작정수: 1
+종료정수: 10
+1에서 10까지의 합 = 55
+
+// 8번
+
+// 9번
+
+#include <stdio.h>
+int main(void)
+{
+	int cnu = 0;
+
+	while (1)
+	{
+		printf("문자를 입력하시오: (종료 .)");
+		char a = getchar();
+		getchar();
+		if (a == 'a')
+			cnu++;
+		else if (a == '.')
+			break;
+	}
+	printf("a의 개수 = %d", cnu);
+	return 0;
+}
+
+문자를 입력하시오: (종료 .)a
+문자를 입력하시오: (종료 .)a
+문자를 입력하시오: (종료 .)a
+문자를 입력하시오: (종료 .)a
+문자를 입력하시오: (종료 .)b
+문자를 입력하시오: (종료 .).
+a의 개수 = 4
+
+// 10번
+
+#include <stdio.h>
+int main(void)
+{
+	printf("===========================\n");
+	printf("화씨온도           섭씨온도\n");
+	printf("===========================\n");
+
+	double  c;
+	int a = 0;
+	while (a <= 60)
+	{
+		c = a;
+		printf("%d     %0.lf\n", a, (c - 32.0) * (5.0 / 9.0));
+		
+		a += 10;
+
+	}
+
+	return 0;
+}
+
+===========================
+화씨온도           섭씨온도
+===========================
+0     -18
+10     -12
+20     -7
+30     -1
+40     4
+50     10
+60     16
+
+// 11번
+
+// 12번
+
+#include <stdio.h>
+int main(void)
+{
+	int input, n = 0;
+	while (n < 10)
+	{
+		printf("데이터를 입력하시오: ");
+		scanf_s("%d", &input);
+
+		for (int i = 0; i < input; i++) {
+
+			printf("*");
+		}
+		printf("\n");
+		n++;
+	}
+	return 0;
+}
+
+// 13번
+
+#include <stdio.h>
+int main(void)
+{
+	int a = 0, b = 1, c, n;
+
+	printf("몇 번째 항까지 구할까요? ");
+	scanf_s("%d", &n);
+
+	for (int i = 0; i <= n; i++)
+	{
+		printf("%d, ", a);
+		
+		c = a + b;
+		a = b;
+		b = c;
+	}
+
+	return 0;
+}
+
+몇 번째 항까지 구할까요? 10
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55,
+
+// 14번
+
+#include <stdio.h>
+int main(void)
+{
+	int n, x = 0;
+	printf("n의 값을 입력하시오: ");
+	scanf_s("%d", &n);
+
+	for (int i = 0; i <= n; i++)
+	{
+		x += i * i;
+	}
+	printf("계산값은 %d입니다.", x);
+
+	return 0;
+}
+
+n의 값을 입력하시오: 10
+계산값은 385입니다.
+
+// 15번
+
+#include <stdio.h>
+int main(void)
+{
+	int x = 1000, b, a;
+	printf("초기 연료량: 1000\n");
+
+	a = x / 10;
+
+	while (x > 0)
+	{
+		printf("연료 충전은 +, 소모는 -로 입력해주세요: ");
+		scanf_s("%d", &b);
+
+		x += b;
+		printf("현재 남아있는 양은 %d입니다.\n", x);
+		if (x < a)
+		{
+			printf("\n(경고) 연료가 10이하입니다.\n");
+			break;
+		}
+	}
+
+	return 0;
+}
+
+초기 연료량: 1000
+연료 충전은 +, 소모는 -로 입력해주세요: -400
+현재 남아있는 양은 600입니다.
+연료 충전은 +, 소모는 -로 입력해주세요: -400
+현재 남아있는 양은 200입니다.
+연료 충전은 +, 소모는 -로 입력해주세요: -150
+현재 남아있는 양은 50입니다.
+
+(경고) 연료가 10이하입니다.
+
+// 16번
+
+// 17번
+
+// 18번
+
+// 19

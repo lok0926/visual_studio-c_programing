@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+int main(void)
+{
+	int coin, a, b;
+	printf("가위 바위 보 게임을 시작합니다.\n");
+	printf("하나를 선택하세요(가위-0, 바위-1, 보-2) ");
+	scanf_s("%d", &a);
+
+	if (a == 0)
+		printf("가위를 냈습니다.\n");
+	else if (a == 1)
+		printf("바위를 냈습니다.\n");
+	else
+		printf("보를 냈습니다.\n");
+
+	srand(time(NULL));
+	
+	coin = rand() % 3;
+	if (coin == 0)
+		printf("제 선택은 가위 입니다.\n");
+	else if (coin == 1)
+		printf("제 선택은 바위 입니다.\n");
+	else
+		printf("제 선택은 보 입니다.\n");
+
+	if (a + 1 == coin)
+		printf("컴퓨터 승리, 캇!");
+	else if (a == 2 && coin == 0)
+		printf("컴퓨터 승리, 캇!");
+	else if (coin + 1 == a)
+		printf("사용자 승리");
+	else if (a == coin)
+		printf("비겼습니다.");
+	else
+		printf("사용자 승리");
+
+	return 0;
+}

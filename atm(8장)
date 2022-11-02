@@ -1,0 +1,102 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+void mainMenu();
+void checkBalance(int balance);
+int moneyDeposit(int balance);
+int moneyWithdraw(int balance);
+void menuExit();
+void errorMessage();
+
+int main()
+{
+	int option = 0;
+	int balance = 10000;
+
+	int again = 1;
+
+	while (again)
+	{
+		mainMenu();
+		scanf("%d", &option);
+
+		switch (option)
+		{
+		case 1:
+			checkBalance(balance);
+			break;
+		case 2:
+			balance = moneyDeposit(balance);
+			break;
+		case 3:
+			balance = moneyWithdraw(balance);
+			break;
+		case 4:
+			menuExit();
+			return 0;
+		default:
+			errorMessage();
+			break;
+		}
+	}
+	return 0;
+}
+
+void mainMenu()
+{
+	printf("\n**********Welcome to 콘서트 ATM***********\n");
+
+	printf("<1> 잔고 확인\n");
+	printf("<2> 입금\n");
+	printf("<3> 인출\n");
+	printf("<4> 종료\n");
+	printf("****하나를 선택하시오****\n\n");
+}
+
+void checkBalance(int balance)
+{
+	printf("****잔고는 %d입니다.\n\n", balance);
+}
+
+int moneyDeposit(int balance)
+{
+	int deposit;
+	printf("****입금 금액을 입력하시오\n");
+	scanf("%d", &deposit);
+
+	balance += deposit;
+	printf("\n새로운 잔고는 %d입니다.\n\n", balance);
+	return balance;
+}
+
+int moneyWithdraw(int balance)
+{
+	int withdraw;
+	int back = 1;
+
+	while (back)
+	{
+		printf("출금 금액을 입력하시오: \n");
+		scanf("%d", &withdraw);
+
+		if (withdraw < balance)
+		{
+			back = 0;
+			balance -= withdraw;
+			printf("\n새로운 잔고는 %d입니다.\n\n", balance);
+		}
+		else
+		{
+			printf("\n%d 이하로 입력하세요.\n\n", balance);
+		}
+	}
+	return balance;
+}
+
+void menuExit() {
+	printf("종료!!\n");
+}
+
+void errorMessage() {
+	printf("오류입니다!!!\n");
+}

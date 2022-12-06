@@ -1,1 +1,67 @@
+// 1번
 
+다시
+
+// 2번
+
+다시
+
+// 3번
+
+다시
+
+// 4번
+
+다시
+
+// 5번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdlib.h>
+#define WIDTH 10
+#define HEIGHT 10
+void brighten_image(char* p, int n);
+void darken_image(char* p, int n);
+void print_image(char* p, int n);
+int main(void)
+{
+	char image[HEIGHT * WIDTH] = {
+	0,0,0,0,9,0,0,0,0,0,
+	0,0,0,9,9,0,0,0,0,0,
+	0,0,9,0,9,0,0,0,0,0,
+	0,0,0,0,8,0,0,0,0,0,
+	0,0,0,0,9,0,0,0,0,0,
+	0,0,0,0,7,0,0,0,0,0,
+	0,0,0,0,8,0,0,0,0,0,
+	0,0,0,0,9,0,0,0,0,0,
+	0,0,0,0,9,0,0,0,0,0,
+	0,0,6,6,9,7,7,0,0,0 };
+	darken_image(image, WIDTH, HEIGHT);
+	print_image(image, WIDTH, HEIGHT);
+	return 0;
+}
+void darken_image(char* p, int w, int h)
+{
+	int i;
+	int n = w * h;
+	for (i = 0; i < n; i++)
+		if (p[i] > 0) p[i]--;
+}
+void brighten_image(char* p, int w, int h)
+{
+	int i;
+	int n = w * h;
+	for (i = 0; i < n; i++)
+		if (p[i] < 9) p[i]++;
+}
+void print_image(char* p, int w, int h)
+{
+	int i, k;
+	for (i = 0; i < HEIGHT; i++) {
+		for (k = 0; k < WIDTH; k++) {
+			printf("%d ", p[i * WIDTH + k]);
+		}
+		printf("\n");
+	}
+}

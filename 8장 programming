@@ -1,0 +1,135 @@
+// 1번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdlib.h>
+
+void func(double x, double y)
+{
+	double result;
+	result = (1.5 * x) + (3.0 * y);
+	printf("x=%lf, y=%lf, f(x, y)=%lf", x, y, result);
+}
+
+int main(void)
+{
+	func(1.0, 2.0);
+	func(2.0, 0);
+	func(2.0, 1.0);
+
+	return 0;
+}
+
+// 2번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdlib.h>
+
+double get_bigger(double n1, double n2)
+{
+	double big;
+	if (n1 < n2)
+		big = n2;
+	else
+		big = n1;
+	
+	return big;
+}
+
+int main(void)
+{
+	double n1, n2, result;
+	printf("실수를 입력하시오: ");
+	scanf_s("%lf", &n1);
+	printf("실수를 입력하시오: ");
+	scanf_s("%lf", &n2);
+	result = get_bigger(n1, n2);
+	printf("더 큰수는 %.3lf입니다.", result);
+
+	return 0;
+}
+
+// 5번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+double check_prime(int x)
+{
+	for (int a = 2; a < x; a++)
+	{
+		if (x % a == 0)
+			return 1;
+	}
+	return 0;
+}
+
+int main(void)
+{
+	for (int a = 2; a <= 100; a++)
+	{
+		if (check_prime(a) == 0)
+			printf("%d ", a);
+	}
+	return 0;
+}
+
+// 6번
+
+다시  
+
+// 7번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <math.h>
+int main(void)
+{
+	double x1, x2, y1, y2;
+	double a;
+
+	printf("첫번째 점의 좌표를 입력하시오: (x, y) ");
+	scanf_s("%lf %lf", &x1, &y1);
+	
+	printf("두번째 점의 좌표를 입력하시오: (x, y) ");
+	scanf_s("%lf %lf", &x2, &y2);
+
+	a = dist_2d(x1, x2, y1, y2);
+	printf("두점 사이의 거리는 %lf", a);
+	return 0;
+}
+int dist_2d(double x1, double x2, double y1, double y2)
+{
+	double result;
+	result = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+	return result;
+}
+
+// 9번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdlib.h>
+int main(void)
+{
+	int user, computer;
+	srand(time(NULL));
+
+	while (1)
+	{
+		printf("앞(0) 또는 뒤(1)를 선택하시오(종료는 -1):");
+		scanf_s("%d", &user);
+		if (user == -1)
+			break;
+		computer = rand() % 2;
+		if (computer == user)
+			printf("컴퓨터가 이겼습니다.\n");
+		else
+			printf("사용자가 이겼습니다.\n");
+	}
+	return 0;
+}
+
+// 13번
+

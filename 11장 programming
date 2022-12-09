@@ -1,0 +1,190 @@
+// 1번
+
+다시
+
+// 2번
+
+다시
+
+// 3번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+struct complex {
+	double real;
+	double imag;
+};
+
+void get_input(struct complex *px);
+struct complex add_complex(struct complex x, struct complex y);
+
+int main(void)
+{
+	struct complex x, y, z;
+	printf("첫번째 복소수를 입력하시오(a, b): ");
+	get_input(&x);
+	printf("두번째 복소수를 입력하시오(a, b): ");
+	get_input(&y);
+	z = add_complex(x, y);
+	printf("%.1lf + %.1lfi\n", z.real, z.imag);
+}
+
+void get_input(struct complex *px)
+{
+	scanf("%lf", &(px->real));
+	scanf("%lf", &(px->imag));
+}
+struct complex add_complex(struct complex x, struct complex y)
+{
+	struct complex z;
+	z.real = x.real + y.real;
+	z.imag = x.imag + y.imag;
+	return z;
+}
+
+// 4번
+
+너무 어렵
+
+// 5번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <string.h>
+
+struct employee {
+	int number;
+	char name[20];
+	int age;
+	char tel[20];
+};
+
+int main(void)
+{
+	struct employee e[10] = {
+		{1, "홍길동1", 20, "111-1111"},
+		{2, "홍길동2", 25, "111-1112"},
+		{3, "홍길동3", 60, "111-1113"},
+		{4, "홍길동4", 40, "111-1114"},
+		{5, "홍길동5", 50, "111-1115"},
+		{6, "홍길동6", 45, "111-1116"},
+		{7, "홍길동7", 32, "111-1117"},
+		{8, "홍길동8", 23, "111-1118"},
+		{9, "홍길동9", 29, "111-1119"},
+		{10, "홍길동10", 62, "111-1120"}
+	};
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (e[i].age <= 30)
+		{
+			printf("%s\n", e[i].name);
+		}
+	}
+	return 0;
+}
+
+// 6번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+struct item{
+	char itemName[30];
+	int qty;
+	int price;
+	int amount;
+};
+
+int main(void)
+{
+	struct item itm[100];
+	struct item* pitem;
+
+	for (int i = 0; i < 3; i++)
+	{
+		pitem = &itm[i];
+		printf("=======================\n");
+		printf("상품의 이름: ");
+		gets_s(pitem->itemName, 30);
+		printf("상품의 가격: ");
+		scanf("%d", &pitem->price);
+		printf("상품의 개수: ");
+		scanf("%d", &pitem->qty);
+		getchar();
+		pitem->amount = (int)pitem->qty * pitem->price;
+		printf("=========================\n\n");	
+	}
+
+	pitem = &itm[0];
+	printf("상품의 이름: %s \n", pitem->itemName);
+	printf("상품의 가격: %d \n", pitem->price);
+	printf("상품의 개수: %d \n", pitem->qty);
+	printf("상품의 재고액: %d \n", pitem->amount);
+
+	return 0;
+}
+
+// 7번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+struct item{
+	char itemName[30];
+	int qty;
+	int price;
+	int amount;
+};
+
+int main(void)
+{
+	struct item itm[100];
+	struct item* pitem;
+
+	for (int i = 0; i < 3; i++)
+	{
+		pitem = &itm[i];
+		printf("=======================\n");
+		printf("상품의 이름: ");
+		gets_s(pitem->itemName, 30);
+		printf("상품의 가격: ");
+		scanf("%d", &pitem->price);
+		printf("상품의 개수: ");
+		scanf("%d", &pitem->qty);
+		getchar();
+		pitem->amount = (int)pitem->qty * pitem->price;
+		printf("=========================\n\n");	
+	}
+
+	pitem = &itm[0];
+	printf("상품의 이름: %s \n", pitem->itemName);
+	printf("상품의 가격: %d \n", pitem->price);
+	printf("상품의 개수: %d \n", pitem->qty);
+	printf("상품의 재고액: %d \n", pitem->amount);
+
+	return 0;
+}
+
+// 7번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+enum game{ scissor,rock,paper };
+
+int main(void)
+{
+		enum game computer = scissor;//가위  
+		enum game user;  
+		printf("가위(0),바위(1),보(2)를입력하세요:"); 
+		scanf("%d", &user);
+		if (user == scissor)
+			printf("비겼습니다.\n");  
+		else if(user==rock) 
+			printf("컴퓨터가졌습니다.\n");  
+		else  
+			printf("컴퓨터가이겼습니다.\n"); 
+		return 0;  
+}

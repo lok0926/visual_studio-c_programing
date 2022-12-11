@@ -1,0 +1,54 @@
+// 3번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int main(void)
+{
+	int n, x, sum = 0;
+	int s[100];
+	
+	printf("입력할 정수의 개수: ");
+	scanf("%d", &n);
+
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d번째 요소를 입력하시오: ", i);
+		scanf("%d", &s[i]);
+		sum += s[i];
+	}
+	printf("합: %d", sum);
+	return 0;
+}
+
+// 4번
+
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int main(void)
+{
+	int big, small;
+	int s[5];
+
+	for (int i = 0; i < 5; i++)
+	{
+		printf("정수를 입력하시오: ");
+		scanf("%d", &s[i]);
+	}
+
+	big = s[0];
+	small = s[0];
+
+	for (int i = 0; i < 5; i++)
+	{
+		if (big < s[i])
+			big = s[i];
+		if (small > s[i])
+			small = s[i];
+	}
+	
+	printf("최댓값 = %d, 최솟값 = %d", big, small);
+
+	return 0;
+}

@@ -77,7 +77,24 @@ int main(void)
 
 // 6번
 
-다시  
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+void power(int x, int y)
+{
+	int result = 1;
+	for (int i = 0; i < y+1; i++) {
+		printf("%d ", result);
+		result *= x;
+	}
+}
+
+int main(void)
+{
+	power(3, 10);
+
+	return 0;
+}
 
 // 7번
 
@@ -133,8 +150,49 @@ int main(void)
 
 // 13번
 
-다시
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+void show_digit(int x)
+{
+	if (x > 0)
+	{
+		show_digit(x / 10);
+		printf("%d ", x % 10);
+	}
+}
+
+int main(void)
+{
+	int x;
+	printf("정수를 입력하시오: ");
+	scanf("%d", &x);
+
+	show_digit(x);
+
+	return 0;
+}
 
 // 14번
 
-다시
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int show_digit(int x)
+{
+	if (x == 1)
+		return 1;
+	else
+		return x * x * x + show_digit(x - 1);
+	
+}
+
+int main(void)
+{
+	int x, sum;
+	printf("정수를 입력하시오: ");
+	scanf("%d", &x);
+
+	printf("%d\n", show_digit(x));
+	return 0;
+}

@@ -1,10 +1,60 @@
 // 1번
 
-다시
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <string.h>
+
+struct student
+{ 
+	union 
+	{ 
+		char number[30];  
+		char reg_number[30];
+	}id;
+	char name[20];//이름
+	char tel[20];//전화번호  
+};  
+int main(void)
+{ 
+	struct student s[10]={
+		{"20170001","홍길동1","111-1111"},
+		{"990301-1234567","홍길동2","111-222"}
+	};
+	int i;
+	for (i = 0; i < 10; i++)
+		printf("%s %s %s\n", s[i].name, s[i].id.number, s[i].tel);
+	
+	return 0;  
+}
 
 // 2번
 
-다시
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <string.h>
+
+struct email
+{
+	char title[100];
+	char receiver[50]; 
+	char sender[50]; 
+	char content[1000];
+	char date[100];
+	int priority;  
+};  
+int main(void)
+{
+	struct email e;
+	strcpy(e.title, "안부메일");
+	strcpy(e.receiver, "hjyang@jnu.ac.kr");
+	strcpy(e.sender, "hsh@hankuk.ac.kr");
+	strcpy(e.content, "안녕하십니까?별일없으신지요?");
+	strcpy(e.date, "2010/9/1");
+	e.priority = 1;
+
+	printf("%s\n%s\n%s\n%s\n%s \n%d\n", e.title, e.receiver, e.sender, e.content, e.date, e.priority);
+	return 0;
+}
 
 // 3번
 

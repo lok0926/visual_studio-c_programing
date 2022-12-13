@@ -70,7 +70,27 @@ return (0);
 
 // 4번
 
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
 
+void get(double value, int* i_part, double* f_part)
+{
+	*i_part = (int)value;
+	*f_part = value - (int)value;
+}
+int main(void)
+{
+	printf("전달받은 실수 = %lf", 3.14);
+	int x;
+	double y;
+
+	get(3.14, &x, &y);
+
+	printf("정수부=%d", x);
+	printf("소수부=%lf", y);
+
+	return 0;
+}
 
 // 5번
 

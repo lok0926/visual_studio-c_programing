@@ -66,11 +66,6 @@ int main(void)
 	srand(time(NULL));
 
 	p = (int*)malloc(items * sizeof(int));
-	//if (ptr == NULL)
-	//{
-		//printf("메모리 할당 실패 \n");
-		//exit(0);
-	//}
 
 	for (i = 0; i < items; i++)
 	{
